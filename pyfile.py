@@ -16,26 +16,31 @@ cais = np.loadtxt('TTcaiPCL_' + txtend + '.txt')
 
 plt.figure(figsize=(20,10))
 
-plt.subplot(2,2,1)
+plt.subplot(2,3,1)
 plt.plot(A[1:25000,0],A[1:25000,1])
 plt.xlabel('Time (ms)');
 plt.ylabel('Voltage (mV)')
 
-plt.subplot(2,2,2);
+plt.subplot(2,3,2);
 plt.plot(apds[5:],'.')
 plt.xlabel('Beat Num');
 plt.ylabel('APD (ms)');
 
 inds = np.arange(5,len(cais),2)
 
-plt.subplot(2,2,3);
+plt.subplot(2,3,3);
 plt.plot(1000*cais[inds],'.')
 plt.xlabel('Beat Num');
 plt.ylabel('[Ca]_i (uM)');
 
-plt.subplot(2,2,4);
+plt.subplot(2,3,4);
 plt.plot(nais[inds],'.')
 plt.xlabel('Beat Num');
 plt.ylabel('[Na]_i (mM)');
+
+plt.subplot(2,3,5);
+plt.plot(nais[inds],1000*cais[inds],'.')
+plt.xlabel('[Na]_i (mM)'); 
+plt.ylabel('[Ca]_i (uM)');
 
 plt.savefig('TTplot_' + txtend + '.png');
