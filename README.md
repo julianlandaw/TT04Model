@@ -2,8 +2,8 @@ This repository of code will produce the results in the Landaw et al. 2019 PRL p
 
 To immediately get the results that produce Figure 1, do the following commands in linux/Mac:
 
-make 
-./TTbif.out 0.8 5 0 0.5 2500 0.05 
+% make 
+% ./TTbif.out 0.8 5 0 0.5 2500 0.05 
 
 In brief: 
 "make" produces the command "TTbif.out"
